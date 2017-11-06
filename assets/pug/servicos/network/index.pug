@@ -1,0 +1,83 @@
+extends ../../layout.pug
+
+block title
+	- var titlePage = 'Accion Chile'
+
+block alternate
+	- var alternate = 'jobs/accion/'
+
+block meta
+	- var titleMeta = 'Rodrigo Pessôa - Web designer Brasil — Jobs › Accion Chile'
+
+block vars
+	- var bodyClass = 'page-jobs'
+
+block description
+	- var description = 'Accion Chile foi um site onde Rodrigo Pessoa atuou como desenvolvedor Front-End, usando HTML, CSS, Zurb Foundation, JS, Sass, jQuery, Compass.'
+
+block content
+	.block-breadcrumb
+		.container
+			.row
+				.col-xs-12
+					ol(itemscope itemtype="http://schema.org/BreadcrumbList")
+						li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+							a(href="/", itemprop="item") Home
+						li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+							a(href="/#jobs", itemprop="item") Jobs
+						li(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+							span= titlePage
+
+	section.section
+		article.article
+			.block-resume
+				.container
+					.row
+						.col-xs-12
+							h1= titlePage
+
+							.text
+								p O site foi desenvolvido em outubro de 2014.
+								p Participei do projeto atuando como Front-End.
+								p Feito com: HTML / CSS / Zurb Foundation / JS / Sass / jQuery / Compass
+
+			.block-mobile-screen
+				.container
+					.row
+						.col-xs-12
+							ul
+								li
+									.screen
+										img(src="/img/jobs/accion/mobile-01.jpg", alt="Accion Chile Screen")
+									.mockup
+										img(src="/img/android.png", alt="")
+
+								li
+									.screen
+										img(src="/img/jobs/accion/mobile-02.jpg", alt="Accion Chile Screen")
+									.mockup
+										img(src="/img/android.png", alt="")
+
+			.block-laptop
+				.container
+					.row
+						.col-xs-12
+							ul
+								li
+									.screen
+										img(src="/img/jobs/accion/laptop-01.jpg", alt="Accion Chile Screen")
+									.mockup
+										img(src="/img/laptop.png", alt="")
+			.block-info
+				.container
+					.row
+						.col-xs-12
+							.title
+								span Visite
+							p
+								a(href="http://accionchile.cl/", target="_blank") accionchile.cl
+						
+						.col-xs-12
+							.back
+								.cta
+									a(href="javascript:history.back(-1);") ‹ Voltar

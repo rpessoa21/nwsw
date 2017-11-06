@@ -1,0 +1,36 @@
+.main-menu
+	@extends .col-xs
+	
+	> ul
+		@extends .flex
+		justify-content center
+		
+		@media (min-width tablet)
+			justify-content flex-end
+
+		> li
+			+ li
+				margin-left 15px
+				
+				@media (min-width 420px)
+					margin-left 40px
+			
+			&.current-menu-item
+				color lightColorMaster
+					
+			a
+				font-size 14px
+				transition .4s ease
+				
+				&:hover
+					color lightColorMaster
+
+				@media (min-width 420px)
+					font-size 16px
+					
+.page-jobs
+	.main-menu
+		> ul
+			> li
+				&:nth-child(3)
+					@extends .main-menu > ul > li.current-menu-item

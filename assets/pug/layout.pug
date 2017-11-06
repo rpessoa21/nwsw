@@ -1,0 +1,60 @@
+doctype html
+html(lang="pt")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv='X-UA-Compatible', content='IE=edge; chrome=1')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+		meta(name='designer', content='Rodrigo Pessôa - www.rpessoa.com.br')
+		block description
+		meta(name='description', content= description)
+		meta(name='keywords', content= keywords)
+		meta(name='theme-color', content='#bfe60c')
+		link(href="https://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet")
+		link(type='image/x-icon', rel='shortcut icon', href='/img/favicon.png')
+		block alternate
+		//- link(rel="alternate", hreflang="en" href="http://rpessoa.com.br/en/" + alternate)
+		block title
+		title NSWS Solution &raquo; #{titlePage}
+		block meta
+		meta(property='og:type', content='website')
+		meta(property='og:title', content= titleMeta)
+		//- meta(property='og:url', content='http://rpessoa.com.br/')
+		meta(property='og:site_name', content= titleMeta)
+		meta(property='og:description', content= description)
+		meta(name='twitter:card', content='summary')
+		meta(name='twitter:title', content= titleMeta)
+		meta(name='twitter:description', content= description)
+		link(rel="stylesheet", href="/css/style.css")
+
+	block vars
+	body(itemscope itemtype="http://schema.org/WebPage", class= bodyClass)
+		//- header.header(role="banner", itemscope, itemtype="http://schema.org/WPHeader")
+			.container
+				.row
+					.col-xs-12.relative
+						.lang
+							a(href="/en/") In English
+				.row
+					.col-xs-12.col-sm-6
+						.logo
+							a(href="/")
+								svg#Layer_1(viewbox='0 0 247.688 73.782')
+									use(xlink:href=baseHref + "img/logo.svg")
+									
+
+					.col-xs-12.col-sm-6
+						nav(role="navigation", itemscope="itemscope", itemtype="http://www.schema.org/SiteNavigationElement").main-menu
+							ul
+								each link in links
+									li
+										a(href= link.url, itemprop="url")= link.label
+		
+		block content
+
+		//- footer.footer(role="contentinfo", itemscope itemtype="http://schema.org/WPFooter")
+			.row
+				.col-xs-12
+					
+
+		script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+		script(src="/js/main.min.js")

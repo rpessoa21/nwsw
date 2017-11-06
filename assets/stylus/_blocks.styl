@@ -1,0 +1,112 @@
+// ========================
+// blocks
+// ========================
+
+.block
+	&-slim
+		margin-left auto
+		margin-right auto
+		max-width tablet
+		width 100%
+		
+	&-superslim
+		@extends .block-slim
+		max-width mobile
+		
+	// block cinza
+	&-gray
+		background-color #efefef
+		
+	&-center
+		@extends .txt-center
+		
+	// block de info no topo do job
+	&-info
+		margin-top 40px
+		padding 35px 0
+		
+		.title
+			display inline-block
+			font-size 24px
+			
+			&:after
+				background-color darkColorTwo
+				content ''
+				display inline-block
+				height 1px
+				transform translateY(-12px)
+				width 100%
+				
+	&-jobs
+		max-width 1100px
+		margin 0 auto
+		
+	&-mobile-screen
+		margin 80px 0
+		
+		ul
+			@extends .flex
+			flex-wrap wrap
+			
+			li
+				@extends .relative
+				margin 0 auto
+				
+				.screen
+					@extends .absolute
+					left 0
+					padding 14vw 4.5vw 24vw
+					top 0
+					
+					@media (min-width 400px)
+						left 18px
+						padding 0
+						top 56px
+					
+				img
+					@extends .img-max-responsive
+					
+	&-laptop
+		@extends .block-mobile-screen, .block-gray
+		padding 100px 0
+		
+		ul
+			li
+				.screen
+					left 0
+					padding 2.6vw 9.6vw 5vw
+					top 0
+					
+					@media (min-width desktopSmall) and (max-width 1199px)
+						left 12px
+						padding 2.6vw 10.2vw 5vw
+						top 6px
+					
+					@media (min-width 1200px)
+						left 131px
+						padding 0
+						top 37px
+						
+					img
+						@extends .img-max-responsive
+				
+				.screen-video
+					@extends .absolute
+					left 50%
+					margin 0 auto
+					max-width 829px
+					top 50%
+					transform translate(-50%, calc(-50% - 20px))
+					width 76%
+
+					video
+						height auto
+						max-width 829px
+						width 100%
+						
+	&-resume
+		@extends .block-superslim
+		margin-top 60px
+		
+	&-info
+		@extends .block-center

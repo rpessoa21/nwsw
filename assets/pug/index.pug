@@ -1,0 +1,23 @@
+extends ./layout.pug
+
+block title
+	- var titlePage = 'Home'
+
+block vars
+	- var bodyClass = 'home'
+
+block alternate
+	- var alternate = ''
+
+block meta
+	- var titleMeta = 'NSWS Solutions'
+
+block description
+	- var description = ""
+
+block content
+	section.section
+		.container-fluid
+			.card-video--fullscreen
+				video(loop, autoplay, muted, width="100%")
+					source(src=baseHref + "video/nyc-traffic.mp4")
