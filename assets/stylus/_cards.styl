@@ -1,0 +1,117 @@
+.card
+	// ==================
+	// alinhamento
+	// ==================
+	&-center
+		@extends .txt-center
+		
+
+	// ==================
+	// lista
+	&-grid
+		> ul
+			@extends .flex
+			flex-wrap wrap
+			
+			
+			> li
+				@extends .col-xs-12
+			
+					
+	&-grid--two-cols
+		@extends .card-grid
+		
+		> ul
+			> li
+				@media (min-width tablet)
+					@extends .col-sm-6
+				
+	&-grid--three-cols
+		@extends .card-grid
+		
+		> ul
+			> li
+				@media (min-width oldMobile) and (max-width tablet - 1)
+					flex-basis: 50%;
+					max-width: 50%;
+					
+				@media (min-width tablet)
+					flex-basis: 33.333%;
+					max-width: 33.333%;
+					
+	&-grid--four-cols
+		@extends .card-grid
+		
+		> ul
+			> li
+				@media (min-width oldMobile) and (max-width tablet - 1)
+					flex-basis: 50%;
+					max-width: 50%;
+					
+				@media (min-width tablet) and (max-width desktopSmall - 1)
+					flex-basis: 33.333%;
+					max-width: 33.333%;
+					
+				@media (min-width desktopSmall)
+					@extends .col-sm-3
+					
+	&-grid--five-cols
+		@extends .card-grid
+		
+		> ul
+			> li
+				@media (min-width oldMobile) and (max-width tablet - 1)
+					flex-basis: 50%;
+					max-width: 50%;
+					
+				@media (min-width tablet) and (max-width desktopSmall - 1)
+					flex-basis: 33.333%;
+					max-width: 33.333%;
+					
+				@media (min-width desktopSmall)
+					flex-basis: 20%;
+					max-width: 20%;
+					
+
+	// =======================
+	&-video--fullscreen
+		@extends .relative
+		max-height 100vh
+		overflow hidden
+		
+		.overlay-video
+			@extends .absolute
+			background-color rgba(black, .8)
+			display block
+			height 100%
+			left 0
+			top 0
+			width 100%
+			z-index 1
+		
+
+	&-welcome
+		@extends .absolute
+		left 50%
+		top 50%
+		transform translate(-50%, -50%)
+		z-index 2
+		
+		.logo
+			svg
+				fill white
+				height 73px
+				width 247px
+				
+	&-simple-text
+		@extends .txt-center
+		padding 130px 0
+		
+		.title
+			font-size 18px
+			
+			@media (min-width tablet)
+				font-size 32px
+				
+		.simple-text
+			custom-size(900px)

@@ -1,0 +1,161 @@
+// ========================
+// FONTS
+// ========================
+
+font-face($family, $file, $weight)
+	$font-url = '../fonts/'
+
+	@font-face
+		font-family $family
+		font-weight $weight
+		font-style normal
+		src url($font-url + $file + '.eot')
+		src url($font-url + $file + '.eot?#iefix') format('embedded-opentype'), url($font-url + $file + '.woff') format('woff'), url($font-url + $file + '.ttf') format('truetype'), url($font-url + $file + '.svg#' + $file) format('svg')
+
+
+// ========================
+// DEFINE UMA DISTANCIA ENTRE AS COLUNAS
+// ========================
+gutter-col(pl, pr)
+	> div[class*="col-"]
+		padding-left pl
+		padding-right pr
+	
+		&:first-child
+			padding-left 0
+			
+		&:last-child
+			padding-right 0
+
+gutter-li(pl, pr)
+	> li
+		padding-left pl
+		padding-right pr
+	
+		&:first-child
+			padding-left 0
+			
+		&:last-child
+			padding-right 0
+
+
+	
+// ========================
+// DEFINE TAMANHO DO ELEMENTO POSICIONANTO AO CENTRO
+// ========================				
+custom-size(mw)
+	margin-left auto
+	margin-right auto
+	max-width mw
+
+				
+// ========================
+// botao - define o espacamento
+// ========================
+btn(paddingTop, paddingRight, paddingBottom, paddingLeft)
+	font 14px fontMaster
+	letter-spacing 2px
+	padding-bottom paddingBottom
+	padding-left paddingLeft
+	padding-right paddingRight
+	padding-top paddingTop
+	text-transform uppercase
+
+
+// ========================
+// botao - define o efeito do hover
+// ========================
+btn-effect(bgColor, bgHover, hoverColor)
+	&:before
+		border 2px solid bgHover
+		bottom 0
+		content ''
+		left 0px
+		opacity 0
+		position absolute
+		right 0
+		top 0px
+		transition .4s ease
+		z-index 1
+	
+	&:hover
+		background-color bgHover
+		color hoverColor
+		
+		&:before
+			bottom -7px
+			left -7px
+			opacity 1
+			right -7px
+			top -7px
+			
+// ========================
+// MUDA A COR DO TEXTO QUANDO SELECIONA
+// ========================
+selection(backgroundColor, colorFont)
+	::selection
+		background backgroundColor
+		color colorFont
+	
+	::-moz-selection
+		background backgroundColor
+		color colorFont
+		
+
+// Hamburger Settings
+// ------------------------------------------------------------------------
+$hamburger-settings = ();
+
+
+
+// Hamburger Generator
+// ------------------------------------------------------------------------
+hamburger-generator($width = 32px, $height = 3px, $gutter = 5px, $color = #000,
+										$border-radius = 0, $duration = .3s,
+										$timing-function = ease)
+	// Set variables
+	push($hamburger-settings, $height, $gutter)
+
+	position: relative
+	margin-top: $height + $gutter
+	margin-bottom: $height + $gutter
+
+	&,
+	&:before,
+	&:after
+		display: block
+		width: $width
+		height: $height
+		transition: background-color $duration $timing-function,
+								transform $duration $timing-function
+
+		if ($border-radius != 0)
+			border-radius: $border-radius
+
+		background-color: $color
+
+	&:before,
+	&:after
+		position: absolute
+		content: ""
+
+	&:before
+		top: -($height + $gutter)
+
+	&:after
+		top: $height + $gutter
+
+
+
+// Hamburger Animation
+// ------------------------------------------------------------------------
+hamburger-animation()
+	$height = $hamburger-settings[0]
+	$gutter = $hamburger-settings[1]
+	background-color: transparent
+
+	&:before
+		transform: translateY($gutter + $height) rotate(45deg)
+
+	&:after
+		transform: translateY(-($gutter + $height)) rotate(-45deg)

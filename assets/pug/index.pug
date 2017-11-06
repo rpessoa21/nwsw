@@ -16,8 +16,27 @@ block description
 	- var description = ""
 
 block content
-	section.section
+	section.section#welcome
 		.container-fluid
 			.card-video--fullscreen
 				video(loop, autoplay, muted, width="100%")
-					source(src=baseHref + "video/nyc-traffic.mp4")
+					source(src=baseHref + "video/Cars_Timelapse.mp4", type="video/mp4")
+					source(src=baseHref + "video/Cars_Timelapse.webm", type="video/webm")
+
+				.overlay-video
+
+				.card-welcome
+					.logo
+						svg(viewBox="0 0 247.688 73.782")
+							use(xlink:href=baseHref + "img/logo.svg#logo")
+
+	section.section
+		.container
+			.card-simple-text
+				.row
+					.col-xs-12
+						.title
+							h2 O que nós fazemos
+
+						.text
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis error saepe nisi quibusdam recusandae sit cum modi similique deleniti, veritatis quia, repellat consectetur voluptate! Commodi sed nihil illum delectus, porro!

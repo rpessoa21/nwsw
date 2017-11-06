@@ -33,3 +33,7 @@ node_modules
 _stuffs
 *.mp4
 *.ogg
+*.ogv
+*.mov
+*.webm
+*.webp
