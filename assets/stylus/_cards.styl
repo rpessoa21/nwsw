@@ -72,6 +72,12 @@
 					flex-basis: 20%;
 					max-width: 20%;
 					
+	&-grid--servicos
+		@extends .card-grid--four-cols
+		
+		li
+			background-color rgba(#341d53, .8)
+			
 
 	// =======================
 	&-video--fullscreen
@@ -99,9 +105,13 @@
 		
 		.logo
 			svg
-				fill white
 				height 73px
 				width 247px
+				
+				g
+					path
+						fill white
+				
 				
 	&-simple-text
 		@extends .txt-center
@@ -110,8 +120,41 @@
 		.title
 			font-size 18px
 			
+			&:after
+				background-color darkColorMaster
+				content ''
+				display block
+				height 1px
+				margin 20px auto 40px
+				width 200px
+			
 			@media (min-width tablet)
 				font-size 32px
 				
 		.simple-text
 			custom-size(900px)
+			
+		.text
+			custom-size(860px)
+			
+			p
+				font-size 18px
+				margin-bottom 24px
+				
+	// ====================
+	&-banner--servicos
+		background-size cover
+		padding 190px 0
+		
+		@extends .txt-center
+		
+		> .row
+			custom-size(siteWidth)
+		
+		p
+		h2
+		h3
+			@extends .color-white
+			
+		h2
+			margin-bottom 80px
