@@ -10,7 +10,7 @@ html(lang="pt")
 		meta(name='keywords', content= keywords)
 		meta(name='theme-color', content='#bfe60c')
 		link(href="https://fonts.googleapis.com/css?family=Ubuntu:300,400" rel="stylesheet")
-		link(type='image/x-icon', rel='shortcut icon', href='/img/favicon.png')
+		link(type='image/x-icon', rel='shortcut icon', href=baseHref + 'img/favicon.png')
 		block alternate
 		//- link(rel="alternate", hreflang="en" href="http://rpessoa.com.br/en/" + alternate)
 		block title
@@ -24,7 +24,8 @@ html(lang="pt")
 		meta(name='twitter:card', content='summary')
 		meta(name='twitter:title', content= titleMeta)
 		meta(name='twitter:description', content= description)
-		link(rel="stylesheet", href="/css/style.css")
+		//- link(rel="stylesheet", href=baseHref + "css/style.css?raw=true")
+		link(rel="stylesheet", href="https://raw.githubusercontent.com/rpessoa21/nwsw/master/static/css/style.css?raw=true")
 
 	block vars
 	body(itemscope itemtype="http://schema.org/WebPage", class= bodyClass)
@@ -73,4 +74,4 @@ html(lang="pt")
 
 		script(src='http://code.jquery.com/jquery-1.11.3.min.js')
 		script(src='https://maps.googleapis.com/maps/api/js?language=en&key=AIzaSyBZPPym_uPDA-WzKBYEH7xYryW3BqwbFGc')
-		script(src="/js/main.min.js")
+		script(src=baseHref + "js/main.min.js?raw=true")
