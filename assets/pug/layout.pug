@@ -51,10 +51,26 @@ html(lang="pt")
 		
 		block content
 
-		//- footer.footer(role="contentinfo", itemscope itemtype="http://schema.org/WPFooter")
-			.row
-				.col-xs-12
+		footer.footer(role="contentinfo", itemscope itemtype="http://schema.org/WPFooter")
+			.block-footer--main
+				.container
+					.card-footer--main
+						.row
+							.col-sm-6
+								.logo--footer
+									svg(viewBox="0 0 247.688 73.782")
+										use(xlink:href=baseHref + "img/logo.svg#logo")
+
+							.col-sm-6
+								.text
+									p +244 925-934-090
+									p +244 923-739-775
+									p +244 914-231-320
+									p info@nswsolution.com
+									p Avenida 21 de Janeiro, Nº 16
+									p Luanda - Angola
 					
 
 		script(src='http://code.jquery.com/jquery-1.11.3.min.js')
+		script(src='https://maps.googleapis.com/maps/api/js?language=en&key=AIzaSyBZPPym_uPDA-WzKBYEH7xYryW3BqwbFGc')
 		script(src="/js/main.min.js")

@@ -76,9 +76,13 @@
 		@extends .card-grid--four-cols
 		
 		li
-			background-color rgba(#341d53, .8)
+			padding 10px
 			
-
+			.info
+				background-color rgba(#341d53, .8)
+				padding 50px 10px
+			
+	// video home
 	// =======================
 	&-video--fullscreen
 		@extends .relative
@@ -97,13 +101,15 @@
 		
 
 	&-welcome
-		@extends .absolute
+		@extends .absolute, .txt-center
 		left 50%
 		top 50%
 		transform translate(-50%, -50%)
 		z-index 2
 		
 		.logo
+			margin-bottom 20px
+			
 			svg
 				height 73px
 				width 247px
@@ -111,6 +117,17 @@
 				g
 					path
 						fill white
+						
+		.text
+			@extends .color-white
+			font-size 26px
+			font-weight 300
+			
+			@media (min-width tablet)
+				font-size 50px
+				
+			p
+				line-height 1
 				
 				
 	&-simple-text
@@ -119,14 +136,6 @@
 		
 		.title
 			font-size 18px
-			
-			&:after
-				background-color darkColorMaster
-				content ''
-				display block
-				height 1px
-				margin 20px auto 40px
-				width 200px
 			
 			@media (min-width tablet)
 				font-size 32px
@@ -140,7 +149,9 @@
 			p
 				font-size 18px
 				margin-bottom 24px
-				
+	
+
+	// servicos home
 	// ====================
 	&-banner--servicos
 		background-size cover
@@ -158,3 +169,50 @@
 			
 		h2
 			margin-bottom 80px
+			
+			&:after
+				background-color orange
+
+		h3
+			&:after
+				@extends h2:after
+				background-color rgba(white, .2)
+				width 100px
+				
+		.button
+			margin-top 30px
+			
+	// card sobre o mapa home
+	// ==========
+	&-map--float
+		@extends .txt-center
+		left 50%
+		position absolute
+		top 50%
+		transform translate(-50%, -50%)
+		z-index 2
+		
+		.title
+			margin-bottom 20px
+			
+			h2
+				font-size 26px
+				font-weight 300
+				
+				@media (min-width tablet)
+					font-size 60px
+					
+				b
+					color #382948
+					
+
+				&:after
+					display none
+		
+
+	// footer
+	// ========
+	&-footer--main
+		.text
+			@media (min-width tablet)
+				text-align right

@@ -48,7 +48,7 @@ jQuery(document).ready(function($){
 	// =========================
 	// EFEITO DE CLICAR NA SETA PRA ROLAR A TELA
 	// =========================
-
+	try {
 		$.easing.easeInOutExpo = function (x, t, b, c, d) { // definição do efeito que será posteriormente usado no animate
 			if (t==0) return b;
 			if (t==d) return b+c;
@@ -68,96 +68,193 @@ jQuery(document).ready(function($){
 					
 				});
 		});
-
-
-	// =========================
-	// SCROLL SPY
-	// =========================
-	// try {
-	// 	var lastId,
-	// 		topMenu = $(".main-menu ul"),
-	// 		topMenuHeight = $('header').outerHeight()-110,
-	// 		// All list items
-	// 		menuItems = topMenu.find("a"),
-	// 		// Anchors corresponding to menu items
-	// 		scrollItems = menuItems.map(function(){
-	// 			var item = $($(this).attr("href"));
-	// 			if (item.length) { return item; }
-	// 		});
-
-	// 	// Bind click handler to menu items
-	// 	// so we can get a fancy scroll animation
-	// 	menuItems.click(function(e){
-	// 		var href = $(this).attr("href"),
-	// 		offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-	// 		$('html, body').stop().animate({ 
-	// 			scrollTop: offsetTop
-	// 		}, 300);
-	// 		e.preventDefault();
-	// 	});
-
-	// 	// Bind to scroll
-	// 	$(window).scroll(function(){
-	// 		// Get container scroll position
-	// 		var fromTop = $(this).scrollTop()+topMenuHeight;
-			
-	// 		// Get id of current scroll item
-	// 		var cur = scrollItems.map(function(){
-	// 			if ($(this).offset().top < fromTop)
-	// 				return this;
-	// 		});
-	// 		// Get the id of the current element
-	// 		cur = cur[cur.length-1];
-	// 		var id = cur && cur.length ? cur[0].id : "";
-
-	// 		if (lastId !== id) {
-	// 			lastId = id;
-	// 			// Set/remove active class
-	// 			menuItems
-	// 			.parent().removeClass("current_menu_item")
-	// 			.end().filter("[href=#"+id+"]").parent().addClass("current_menu_item");
-	// 		}
-	// 	});
-	// } catch(e) {
-	// 	console.log(e);
-	// }
+	} catch(e) {
+		console.log(e);
+	}
 
 	// =========================
-	// APLICANDO FUNDO MAIS ESCURO QUANDO PASSAR PELA SESSAO SERVICES
+	// mapa
 	// =========================
 	try {
-		$(window).scroll(function(){
-			about = $('.section#about').position().top;
-			jobs = $('.section#jobs').position().top;
-			contact = $('.section#contato').position().top;
-			currentPos = $(window).scrollTop();
-
-			if (currentPos > 20 && currentPos < about) {
-				$('.main-menu ul li:first-child').addClass('current-menu-item');
-			} else {
-				$('.main-menu ul li:first-child').removeClass('current-menu-item');
+		if($('#mapa')[0]) {
+			var image = 'img/pin.png';
+			var mapOptions = {
+				zoom: 17,
+				center: new google.maps.LatLng(-22.9839375, -43.2224139), 
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles: 
+					[
+					  {
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#f5f5f5"
+					      }
+					    ]
+					  },
+					  {
+					    "elementType": "labels.icon",
+					    "stylers": [
+					      {
+					        "visibility": "off"
+					      }
+					    ]
+					  },
+					  {
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#616161"
+					      }
+					    ]
+					  },
+					  {
+					    "elementType": "labels.text.stroke",
+					    "stylers": [
+					      {
+					        "color": "#f5f5f5"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "administrative.land_parcel",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#bdbdbd"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#eeeeee"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        // "color": "#757575"
+					        "color": "#cacaca"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi.park",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#e5e5e5"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "poi.park",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        // "color": "#9e9e9e"
+					        "color": "#cacaca"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#ffffff"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.arterial",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        // "color": "#757575"
+					        "color": "#cacaca"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.highway",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#dadada"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.highway",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        // "color": "#616161"
+					        "color": "#cacaca"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "road.local",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#9e9e9e"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "transit.line",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#e5e5e5"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "transit.station",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#eeeeee"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "water",
+					    "elementType": "geometry",
+					    "stylers": [
+					      {
+					        "color": "#c9c9c9"
+					      }
+					    ]
+					  },
+					  {
+					    "featureType": "water",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      {
+					        "color": "#9e9e9e"
+					      }
+					    ]
+					  }
+					],
+				scrollwheel: false
 			}
-
-			if (currentPos > about && currentPos < jobs) {
-				$('.main-menu ul li:nth-child(2)').addClass('current-menu-item');
-			} else {
-				$('.main-menu ul li:nth-child(2)').removeClass('current-menu-item');
-			}
-
-			if (currentPos > jobs - 1 && currentPos < contact) {
-				$('.main-menu ul li:nth-child(3)').addClass('current-menu-item');
-			} else {
-				$('.main-menu ul li:nth-child(3)').removeClass('current-menu-item');
-			}
-
-			if (currentPos > contact - 1) {
-				$('.main-menu ul li:nth-child(4)').addClass('current-menu-item');
-			} else {
-				$('.main-menu ul li:nth-child(4)').removeClass('current-menu-item');
-			}
-
-			// console.log(about + " Jobs: " + jobs + " Current: " + currentPos);
-		});
+			var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+			var myPos = new google.maps.LatLng(-22.9856375, -43.2224139); 
+			var myMarker = new google.maps.Marker({position: myPos, map: map, icon: image });
+		} else {
+			// 
+		}
 	} catch(e) {
 		console.log(e);
 	}
