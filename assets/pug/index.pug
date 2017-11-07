@@ -20,8 +20,8 @@ block content
 		.container-fluid
 			.card-video--fullscreen
 				video(loop, autoplay, muted, width="100%")
-					source(src=baseHref + "video/Cars_Timelapse.mp4", type="video/mp4")
-					source(src=baseHref + "video/Cars_Timelapse.webm", type="video/webm")
+					source(src=baseHref + "video/Cars_Timelapse.mp4?raw=true", type="video/mp4")
+					source(src=baseHref + "video/Cars_Timelapse.webm?raw=true", type="video/webm")
 
 				.overlay-video
 
@@ -29,6 +29,7 @@ block content
 					.logo
 						svg(viewBox="0 0 247.688 73.782")
 							use(xlink:href=baseHref + "img/logo.svg#logo")
+							//- use(xlink:href=baseHref + "img/logo.svg#logo")
 
 					.text
 						p Lorem ipsum <b>dolor sit</b> amet, consectetur <b>adipisicing</b> elit.
@@ -48,7 +49,7 @@ block content
 
 	section.section
 		.container-fluid
-			.card-banner--servicos(style="background-image: url(img/_content/banner-servicos.jpg)")
+			.card-banner--servicos(style="background-image: url("+ baseHref + "img/_content/banner-servicos.jpg?raw=true)")
 				.row
 					.col-xs-12
 						.title
