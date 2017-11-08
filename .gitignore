@@ -32,8 +32,8 @@ static/img/_content
 
 _stuffs
 *.mov
-# *.mp4
-# *.ogg
-# *.ogv
-# *.webm
-# *.webp
+*.mp4
+*.ogg
+*.ogv
+*.webm
+*.webp
