@@ -21,8 +21,8 @@ gulp.task('templates', function() {
 	return gulp.src(['./assets/pug/**/*.pug', '!./assets/layout.pug'])
 		.pipe(pug({
 			data: {
-				baseHref: "/",
-				// baseHref: "https://github.com/rpessoa21/nwsw/blob/master/static/",
+				// baseHref: "/",
+				baseHref: "https://github.com/rpessoa21/nwsw/blob/master/static/",
 				links: [
 					{
 						'label': 'Home',
