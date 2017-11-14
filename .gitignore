@@ -31,9 +31,10 @@ node_modules
 static/img/_content
 
 _stuffs
+static/video/_
 *.mov
-*.mp4
+# *.mp4
 *.ogg
 *.ogv
-*.webm
+# *.webm
 *.webp
